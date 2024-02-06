@@ -30,5 +30,6 @@ export const getData = async (location) => {
     name,
     text,
   };
+  console.log(json);
   return { obj, forecastObj };
 };
