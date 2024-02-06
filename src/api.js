@@ -21,8 +21,6 @@ export const getData = async (location) => {
     forecastObj[key] = { mintempC, maxtempC, icon };
   }
   const { icon, text } = json.current.condition;
-  console.log(json);
-  console.log(forecastObj);
   const obj = {
     tempC,
     tempCFeels,
@@ -32,5 +30,5 @@ export const getData = async (location) => {
     name,
     text,
   };
-  return obj;
+  return { obj, forecastObj };
 };
