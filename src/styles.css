@@ -1,43 +1,106 @@
+:root {
+  --font-color: #f0f9ff;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .content {
   width: 100%;
   min-height: 100vh;
-  border: 2px solid red;
-  display: grid;
-  grid-template-rows: 1fr 2fr 2fr;
+  background-color: #8ecae6;
 }
 
 .header {
-  border: 2px solid green;
   display: flex;
+  color: var(--font-color);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #0369a1;
+  background: linear-gradient(to right, #f69d3c, #075985, #9198e5);
+  padding-bottom: 4rem;
+}
+
+.heading {
+  font-size: 4rem;
+}
+
+.city-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#city {
+  border: 0;
+  font-size: 1.2rem;
+}
+
+.btn {
+  color: var(--font-color);
+  font-weight: bold;
+  background: #171717;
+  border: none;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fafaf9;
+  color: #171717;
+  transition: 0.7s;
 }
 
 .weather-section {
-  border: 2px solid pink;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #8ecae6;
 }
 
 .weather-card {
-  border: 2px solid blue;
+  background-color: #075985;
+  background: linear-gradient(#075985, #9198e5);
+  border-radius: 20px;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: fit-content;
+  padding: 1rem;
+  margin: 2rem;
+  box-shadow: 3px 5px 20px rgb(29, 29, 29);
+  transition: 0, 5s;
 }
 
 .forecast-section {
-  border: 2px solid orange;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #8ecae6;
+  padding: 2rem;
 }
 
 .forecast-card {
-  width: 15rem;
-  height: 15rem;
-  border: 2px solid brown;
+  width: fit-content;
+  height: fit-content;
+  color: var(--font-color);
+  border-radius: 20px;
+  padding: 2rem;
   display: flex;
+  background: linear-gradient(#075985, #f69d3c);
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-shadow: 3px 5px 20px rgb(29, 29, 29);
+}
+
+.country {
+  font-size: 2rem;
 }

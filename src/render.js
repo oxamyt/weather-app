@@ -1,23 +1,27 @@
 export const render = async function (res) {
-  const weatherCard = document.querySelector(".weather-card");
-  weatherCard.innerHTML = "";
+  const weatherSection = document.querySelector(".weather-section");
+  weatherSection.innerHTML = "";
+  const weatherCard = document.createElement("div");
+  weatherCard.classList.add("weather-card");
   const weatherCountry = document.createElement("h1");
+  weatherCountry.classList.add("country");
   weatherCountry.innerText = res.obj.country;
   const weatherIcon = document.createElement("img");
   weatherIcon.src = res.obj.icon;
   const weatherCity = document.createElement("h2");
   weatherCity.innerText = res.obj.name;
-  const weatherTemp = document.createElement("h3");
-  weatherTemp.innerText = res.obj.tempC;
-  const weatherTempFeels = document.createElement("h4");
-  weatherTempFeels.innerText = res.obj.tempCFeels;
-  const weatherText = document.createElement("h4");
+  const weatherTemp = document.createElement("h2");
+  weatherTemp.innerText = `Temperature: ${res.obj.tempC}°C`;
+  const weatherTempFeels = document.createElement("h2");
+  weatherTempFeels.innerText = `Temperature feels like: ${res.obj.tempCFeels}°C`;
+  const weatherText = document.createElement("h2");
   weatherText.innerText = res.obj.text;
-  const weatherWind = document.createElement("h4");
-  weatherWind.innerText = res.obj.windKm;
+  const weatherWind = document.createElement("h2");
+  weatherWind.innerText = `Wind ${res.obj.windKm}km/h`;
+  weatherSection.append(weatherCard);
   weatherCard.append(
-    weatherCountry,
     weatherIcon,
+    weatherCountry,
     weatherCity,
     weatherTemp,
     weatherTempFeels,
@@ -35,10 +39,10 @@ export const renderForecast = async function (res) {
     forecastCard.classList.add("forecast-card");
     const forecastIcon = document.createElement("img");
     forecastIcon.src = day.icon;
-    const forecastMaxTemp = document.createElement("h1");
-    forecastMaxTemp.innerText = `Max temperature: ${day.maxtempC}`;
-    const forecastMinTemp = document.createElement("h1");
-    forecastMinTemp.innerText = `Min temperature: ${day.mintempC}`;
+    const forecastMaxTemp = document.createElement("h2");
+    forecastMaxTemp.innerText = `Max temperature: ${day.maxtempC}°C`;
+    const forecastMinTemp = document.createElement("h2");
+    forecastMinTemp.innerText = `Min temperature: ${day.mintempC}°C`;
     const forecastDate = document.createElement("h1");
     forecastDate.innerText = `${day.date}`;
     forecastSection.appendChild(forecastCard);
