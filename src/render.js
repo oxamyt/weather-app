@@ -24,23 +24,29 @@ export const render = async function (res) {
     weatherText,
     weatherWind,
   );
-  console.log("da");
 };
 
 export const renderForecast = async function (res) {
   const forecast = Object.values(res.forecastObj);
   const forecastSection = document.querySelector(".forecast-section");
+  forecastSection.innerHTML = "";
   for (let day of forecast) {
     const forecastCard = document.createElement("div");
     forecastCard.classList.add("forecast-card");
     const forecastIcon = document.createElement("img");
     forecastIcon.src = day.icon;
     const forecastMaxTemp = document.createElement("h1");
-    forecastMaxTemp.innerText = day.maxtempC;
+    forecastMaxTemp.innerText = `Max temperature: ${day.maxtempC}`;
     const forecastMinTemp = document.createElement("h1");
-    forecastMinTemp.innerText = day.mintempC;
+    forecastMinTemp.innerText = `Min temperature: ${day.mintempC}`;
+    const forecastDate = document.createElement("h1");
+    forecastDate.innerText = `${day.date}`;
     forecastSection.appendChild(forecastCard);
-    forecastCard.append(forecastIcon, forecastMaxTemp, forecastMinTemp);
-    console.log(day.icon);
+    forecastCard.append(
+      forecastIcon,
+      forecastMaxTemp,
+      forecastMinTemp,
+      forecastDate,
+    );
   }
 };

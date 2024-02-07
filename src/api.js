@@ -17,8 +17,11 @@ export const getData = async (location) => {
     const key = i === 0 ? "first" : i === 1 ? "second" : "third";
     const mintempC = forecastDays[i].day.mintemp_c;
     const maxtempC = forecastDays[i].day.maxtemp_c;
+    const date = new Date(forecastDays[i].date).toLocaleDateString("en-EN", {
+      weekday: "long",
+    });
     const { icon } = forecastDays[i].day.condition;
-    forecastObj[key] = { mintempC, maxtempC, icon };
+    forecastObj[key] = { mintempC, maxtempC, icon, date };
   }
   const { icon, text } = json.current.condition;
   const obj = {
@@ -30,6 +33,5 @@ export const getData = async (location) => {
     name,
     text,
   };
-  console.log(json);
   return { obj, forecastObj };
 };

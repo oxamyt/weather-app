@@ -8,7 +8,6 @@ btn.addEventListener("click", async (event) => {
   event.preventDefault();
   const cityInput = document.querySelector("#city").value;
   const res = await getData(cityInput);
-  console.log(res);
   render(res);
   renderForecast(res);
 });
