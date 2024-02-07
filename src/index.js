@@ -7,7 +7,13 @@ const btn = document.querySelector(".btn");
 btn.addEventListener("click", async (event) => {
   event.preventDefault();
   const cityInput = document.querySelector("#city").value;
-  const res = await getData(cityInput);
-  render(res);
-  renderForecast(res);
+  if (cityInput) {
+    try {
+      const res = await getData(cityInput);
+      render(res);
+      renderForecast(res);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 });

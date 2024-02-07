@@ -9,7 +9,7 @@ body {
 .content {
   width: 100%;
   min-height: 100vh;
-  background-color: #8ecae6;
+  background: linear-gradient(to right, #8ecae6, #fecaca);
 }
 
 .header {
@@ -18,13 +18,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0369a1;
   background: linear-gradient(to right, #f69d3c, #075985, #9198e5);
   padding-bottom: 4rem;
+  height: max-content;
+  box-shadow: 1px 0px 11px 1px rgb(29, 29, 29);
+  z-index: 1;
+}
+
+.svg {
+  width: 7rem;
 }
 
 .heading {
   font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .city-label {
@@ -55,11 +64,18 @@ body {
   transition: 0.7s;
 }
 
+.error {
+  color: red;
+  font-size: 1.3rem;
+  padding-right: 11rem;
+  font-weight: bold;
+  visibility: hidden;
+}
+
 .weather-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #8ecae6;
 }
 
 .weather-card {
@@ -76,14 +92,12 @@ body {
   padding: 1rem;
   margin: 2rem;
   box-shadow: 3px 5px 20px rgb(29, 29, 29);
-  transition: 0, 5s;
 }
 
 .forecast-section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #8ecae6;
   padding: 2rem;
 }
 
@@ -103,4 +117,8 @@ body {
 
 .country {
   font-size: 2rem;
+}
+
+.icon {
+  width: 7rem;
 }

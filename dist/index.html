@@ -20,7 +20,15 @@
   <body>
     <div class="content">
       <div class="header">
-        <h1 class="heading">Weather app</h1>
+        <h1 class="heading">
+          <span
+            ><img
+              class="svg"
+              src="assets/weather-svgrepo-com.svg"
+              alt="cloud-png"
+          /></span>
+          Weather app
+        </h1>
         <form class="weather-form">
           <label class="city-label" for="city">
             <input
@@ -32,6 +40,7 @@
             <button class="btn">Search</button>
           </label>
         </form>
+        <span class="error">No location found</span>
       </div>
       <div class="weather-section"></div>
       <div class="forecast-section"></div>
