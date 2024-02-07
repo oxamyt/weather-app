@@ -2,7 +2,7 @@
 export const getData = async (location) => {
   try {
     const data = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=18a3f8efce464b4392b140617240202&q=${location}&days=3&aqi=yes&alerts=yes`,
+      `https://api.weatherapi.com/v1/forecast.json?key=18a3f8efce464b4392b140617240202&q=${location}&days=3&aqi=yes&alerts=yes`,
       {
         mode: "cors",
       },
